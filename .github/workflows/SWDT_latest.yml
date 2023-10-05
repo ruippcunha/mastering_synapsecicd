@@ -3,11 +3,12 @@
 name: Synapse Workspace Deployment
 
 # Controls when the workflow will run hj
-on:
+on: 
+  workflow_dispatch
 
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [workspace_publish]
+#push:
+ #   branches: [workspace_publish]
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
