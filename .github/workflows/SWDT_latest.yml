@@ -30,6 +30,8 @@ jobs:
          # Provide name of the operation.
           operation: 'deploy'
           # Provide the Synapse workspace name where you want to deploy the artifacts.
+          # Provide the type of cloud environment. Valid values are: Azure Public, Azure China, Azure US Government, Azure Germany
+          Environment: 'Azure Public'
           TargetWorkspaceName: 'syn-flavor2-cicd-uat'
           # Specify the path to the workspace artifacts template.
           TemplateFile: 'syn-2022-case-repro-flavor2-new/TemplateForWorkspace.json'
