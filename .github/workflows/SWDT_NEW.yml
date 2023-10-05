@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Synapse Workspace Deployment
+name: SWDT NEW
 
 # Controls when the workflow will run hj
 on: 
