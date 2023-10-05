@@ -7,9 +7,9 @@ on:
     branches: [ "workspace_publish" ]
 
   # Allows you to run this workflow manually from the Actions tab
+
   workflow_dispatch:
-
-
+   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -33,9 +33,9 @@ jobs:
           Environment: 'Azure Public'
           TargetWorkspaceName: 'syn-flavor2-cicd-uat'
           # Specify the path to the workspace artifacts template.
-          TemplateFile: 'syn-2022-case-repro-flavor2-new/TemplateForWorkspace.json'
+          TemplateFile: 'TemplateForWorkspace.json'
           # Specify the path to the template parameter file.
-          ParametersFile: 'syn-2022-case-repro-flavor2-new/TemplateParametersForWorkspace.json'         
+          ParametersFile: 'TemplateParametersForWorkspace.json'         
           # Provide the resource group of the target Synapse workspace.
           resourceGroup: 'rg-newcicd'
           # Provide client id of service principal.
