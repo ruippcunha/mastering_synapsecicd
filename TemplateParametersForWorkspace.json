@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "syn-2022-case-repro-flavor2-new"
+		},
+		"syn-2022-case-repro-flavor2-new-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:syn-2022-case-repro-flavor2-new.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"LS_ADLS2_properties_typeProperties_url": {
+			"value": "https://stgadlsgen2ext.dfs.core.windows.net/"
+		},
+		"syn-2022-case-repro-flavor2-new-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://storagewspcunha.dfs.core.windows.net"
+		}
+	}
+}
