@@ -212,8 +212,7 @@
 			"type": "Microsoft.Synapse/workspaces/managedVirtualNetworks/managedPrivateEndpoints",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
-				"privateLinkResourceId": "/subscriptions/7b1f20ef-1976-4cda-8578-8ed55045bd7a/resourceGroups/rg-cunha/providers/Microsoft.Network/privateLinkServices/loadbalancertest",
-				"groupId": "",
+				"privateLinkResourceId": "/subscriptions/7b1f20ef-1976-4cda-8578-8ed55045bd7a/resourceGroups/rg-cunha/providers/Microsoft.Network/privateLinkServices/loadbalancertest",				
 				"fqdns": [
 					"nexus.gt.az.corporate.argenta.be"
 				]
