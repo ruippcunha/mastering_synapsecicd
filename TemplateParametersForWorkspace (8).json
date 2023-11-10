@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "syn-2022-case-repro-flavor2-new"
+		},
+		"syn-2022-case-repro-flavor2-new-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:syn-2022-case-repro-flavor2-new.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"AutoResolveIntegrationRuntime_name": {
+			"value": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]"
+		},
+		"AutoResolveIntegrationRuntime_properties_typeProperties_computeProperties": {
+			"value": {
+				"location": "AutoResolve",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 0
+				}
+			}
+		},
+		"IR-PROD_name": {
+			"value": "[concat(parameters('workspaceName'), '/IR-PROD')]"
+		},
+		"IR-PROD_properties_typeProperties_computeProperties": {
+			"value": {
+				"location": "AutoResolve",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 10,
+					"cleanup": false
+				},
+				"pipelineExternalComputeScaleProperties": {
+					"timeToLive": 60,
+					"numberOfPipelineNodes": 1,
+					"numberOfExternalNodes": 1
+				}
+			}
+		}
+	}
+}
