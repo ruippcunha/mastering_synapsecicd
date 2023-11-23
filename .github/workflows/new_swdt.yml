@@ -31,7 +31,7 @@ jobs:
           # Provide the Synapse workspace name where you want to deploy the artifacts.
           # Provide the type of cloud environment. Valid values are: Azure Public, Azure China, Azure US Government, Azure Germany
           Environment: 'Azure Public'
-          TargetWorkspaceName: 'syn-2022-case-repro-flavor2-new'
+          TargetWorkspaceName: 'syn-2022-case-repro-flavor2-newXYZ'
           # Specify the path to the workspace artifacts template.
           TemplateFile: 'TemplateForWorkspace.json'
           # Specify the path to the template parameter file.
