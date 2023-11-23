@@ -14,7 +14,7 @@
 		"AutoResolveIntegrationRuntime_name": {
 			"value": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]"
 		},
-		"IR-Synapse-NonProd_name": {
+		"IR_Synapse_NonProd_name": {
 			"value": "[concat(parameters('workspaceName'), '/IR-Synapse-NonProd')]"
 		}		
 	}
