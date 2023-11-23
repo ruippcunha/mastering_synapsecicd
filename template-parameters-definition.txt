@@ -1,0 +1,79 @@
+{
+    "Microsoft.Synapse/workspaces/integrationRuntimes": {
+      "name":"="
+    },
+     "Microsoft.Synapse/workspaces/linkedServices": {
+        "*": {
+            "properties": {
+                "typeProperties": {
+                    "accountName": "=",
+                    "username": "=",
+                    "connectionString": "|:-connectionString:secureString",
+                    "secretAccessKey": "|",
+                    "password": {
+                               "secretName": "=:-pswsecret"
+                   }
+                  },
+                    "connectVia": {
+                               "referenceName": "=:-referenceName"
+                    }
+                }
+       },
+       "MySql": {
+            "properties": {
+                "typeProperties": {
+                  "connectionString": {
+                          "secretName": "=:-secret"
+                  }
+                }
+            }
+        },
+       "Oracle": {
+            "properties": {
+                "typeProperties": {
+                  "connectionString": {
+                          "secretName": "=:-secret"
+                  }
+                }
+            }
+        },
+      "SapHana": {
+            "properties": {
+                "typeProperties": {
+                  "connectionString": {
+                          "secretName": "=:-secret"
+                  }
+                }
+            }
+        },
+        "SQLServer": {
+            "properties": {
+                "typeProperties": {
+                  "connectionString": {
+                          "secretName": "=:-secret"
+                  }
+                }
+            }
+        },
+        "AzureDataLakeStore": {
+            "properties": {
+                "typeProperties": {
+                    "dataLakeStoreUri": "="
+                }
+            }
+        },
+        "AzureKeyVault": {
+            "properties": {
+                "typeProperties": {
+                    "baseUrl": "|:baseUrl:secureString"
+                },
+                "parameters": {
+                    "KeyVaultURL": {
+                        "type": "=",
+                        "defaultValue": "|:defaultValue:secureString"
+                    }
+                }
+            }
+        }
+    }
+}
