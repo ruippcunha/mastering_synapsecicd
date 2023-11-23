@@ -14,15 +14,15 @@
 		},
 		"LS_REST_PowerBI_referenceName": {
 			"type": "string",
-			"defaultValue": "IR_Synapse_NonProd"
+			"defaultValue": "IR-Synapse-NonProd"
 		},		
 		"AutoResolveIntegrationRuntime_name": {
 			"type": "string",
 			"defaultValue": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]"
 		},
-		"IR_Synapse_NonProd_name": {
+		"IR-Synapse-NonProd_name": {
 			"type": "string",
-			"defaultValue": "[concat(parameters('workspaceName'), '/IR_Synapse_NonProd')]"
+			"defaultValue": "[concat(parameters('workspaceName'), '/IR-Synapse-NonProd')]"
 		}
 	},
 	"variables": {
@@ -89,7 +89,7 @@
 			]
 		},
 		{
-			"name": "[parameters('IR_Synapse_NonProd_name')]",
+			"name": "[parameters('IR-Synapse-NonProd_name')]",
 			"type": "Microsoft.Synapse/workspaces/integrationRuntimes",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
