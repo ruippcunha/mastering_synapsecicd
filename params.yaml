@@ -1,1 +1,1 @@
-'-IR-PROD_name "[concat(parameters(''workspaceName''), ''/IR-NEWPROD'')]"'
+'-IR-Synapse-NonProd_name "[concat(parameters(''workspaceName''), ''/IR-Synapse-QA'')]" -LS_REST_PowerBI_referenceName "IR-Synapse-QA"'
