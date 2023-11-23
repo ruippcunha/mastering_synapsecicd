@@ -26,7 +26,7 @@
 		"LS_Syn_Analytics_Serverless_SQLPool_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=syn-analytics-nonprod-ondemand.sql.azuresynapse.usgovcloudapi.net;Initial Catalog=@{linkedService().DBName}"
 		},
-		"SAP CDC Test_password": {
+		"SAP_CDC_Test_password": {
 			"value": ""
 		},
 		"SapHanaCDSTEST_connectionString": {
@@ -149,7 +149,7 @@
 		"PowerBIContainer_referenceName": {
 			"value": "AutoResolveIntegrationRuntime"
 		},
-		"SAP CDC Test_referenceName": {
+		"SAP_CDC_Test_referenceName": {
 			"value": "IR-Synapse-NonProd"
 		},
 		"SandboxContainer_referenceName": {
