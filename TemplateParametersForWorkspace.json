@@ -175,6 +175,27 @@
 		},
 		"IR-Synapse-NonProd_name": {
 			"value": "[concat(parameters('workspaceName'), '/IR-Synapse-NonProd')]"
-		}
+		},
+		"SapHanaCDSTEST_referenceName": {
+			"value": "IR-Synapse-NonProd"
+		},
+		"LS_MySql_VRT_referenceName": {
+			"value": "IR-Synapse-NonProd"
+		},
+		"LS_ORACLE_GAREPPRD_referenceName": {
+			"value": "IR-Synapse-NonProd"
+		},
+		"LS_MySql_PRTS_referenceName": {
+			"value": "IR-Synapse-NonProd"
+		},
+		"LS_HANA_BW_referenceName": {
+			"value": "IR-Synapse-NonProd"
+		},
+		"LS_HANA_SLT_referenceName": {
+			"value": "IR-Synapse-NonProd"
+		},
+		"LS_HANA_BW_referenceName": {
+			"value": "IR-Synapse-NonProd"
+		}			
 	}
 }
