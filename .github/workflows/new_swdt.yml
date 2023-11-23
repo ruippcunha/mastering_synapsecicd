@@ -33,10 +33,10 @@ jobs:
           Environment: 'Azure Public'
           TargetWorkspaceName: 'syn-2022-case-repro-flavor2-new'
           # Specify the path to the workspace artifacts template.
-          TemplateFile: 'TemplateForWorkspace.json'
+          TemplateFile: './TemplateForWorkspace.json'
           # Specify the path to the template parameter file.
-          ParametersFile: 'TemplateParametersForWorkspace.json'         
-          OverrideArmParameters: 'params.yaml'
+          ParametersFile: './TemplateParametersForWorkspace.json'         
+          OverrideArmParameters: './params.yaml'
           # Provide the resource group of the target Synapse workspace.
           resourceGroup: 'rg-cicd-synapse'
           # Provide client id of service principal.
