@@ -20,9 +20,9 @@
 			"type": "string",
 			"defaultValue": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]"
 		},
-		"IR_Synapse-NonProd_name": {
+		"IR_Synapse_NonProd_name": {
 			"type": "string",
-			"defaultValue": "[concat(parameters('workspaceName'), '/IR_Synapse-NonProd')]"
+			"defaultValue": "[concat(parameters('workspaceName'), '/IR_Synapse_NonProd')]"
 		}
 	},
 	"variables": {
