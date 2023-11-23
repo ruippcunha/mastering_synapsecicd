@@ -89,7 +89,7 @@
 			]
 		},
 		{
-			"name": "[parameters('IR_Synapse-NonProd_name')]",
+			"name": "[parameters('IR_Synapse_NonProd_name')]",
 			"type": "Microsoft.Synapse/workspaces/integrationRuntimes",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
