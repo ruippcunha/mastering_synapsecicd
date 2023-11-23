@@ -36,7 +36,7 @@ jobs:
           TemplateFile: 'TemplateForWorkspace.json'
           # Specify the path to the template parameter file.
           ParametersFile: 'TemplateParametersForWorkspace.json'         
-          OverrideArmParameters: '-LS_REST_PowerBI_referenceName "IR-Synapse-QA" -IR-Synapse-NonProd_name "[concat(parameters(''workspaceName''), ''/IR-Synapse-QA'')]"'
+          OverrideArmParameters: '-IR-Synapse-NonProd_name "[concat(parameters(''workspaceName''), ''/IR-Synapse-QA'')]" -LS_REST_PowerBI_referenceName "IR-Synapse-QA"'
           # Provide the resource group of the target Synapse workspace.
           resourceGroup: 'rg-cicd-synapse'
           # Provide client id of service principal.
