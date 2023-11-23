@@ -9,13 +9,13 @@
 			"value": ""
 		},
 		"LS_REST_PowerBI_referenceName": {
-			"value": "IR_Synapse_NonProd"
+			"value": "IR-Synapse-NonProd"
 		},
 		"AutoResolveIntegrationRuntime_name": {
 			"value": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]"
 		},
-		"IR_Synapse_NonProd_name": {
-			"value": "[concat(parameters('workspaceName'), '/IR_Synapse_NonProd')]"
+		"IR-Synapse-NonProd_name": {
+			"value": "[concat(parameters('workspaceName'), '/IR-Synapse-NonProd')]"
 		}		
 	}
 }
