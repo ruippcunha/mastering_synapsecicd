@@ -28,7 +28,7 @@ jobs:
       with:
         inlineScript: |         
 
-          $context = Connect-AzAccount -Force
+          $context = Connect-AzAccount -ServicePrincipal -Tenant ${{ secrets.TENANTID }} -Credential (New-Object System.Management.Automation.PSCredential (${{ secrets.CLIENTID }}, (ConvertTo-SecureString ${{ secrets.CLIENTSECRET }} -AsPlainText -Force)))
 
           # Set the context to the appropriate subscription
           Set-AzContext -SubscriptionId ${{ secrets.SUBSCRIPTIONID }} -Context $context
