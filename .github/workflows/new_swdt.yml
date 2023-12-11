@@ -28,7 +28,7 @@ jobs:
       with:
         inlineScript: |         
 
-          $context = Connect-AzAccount -ServicePrincipal -Tenant "72f988bf-86f1-41af-91ab-2d7cd011db47" -Credential (New-Object System.Management.Automation.PSCredential ("70c858c1-755c-4d35-bb41-77a76a399244", (ConvertTo-SecureString "SVm8Q~GiwxZME3A6C5.-wLzh.2QprnfoxUuOjdhF" -AsPlainText -Force)))
+          $context = Connect-AzAccount -ServicePrincipal -Tenant ${{ secrets.TENANTID }} -Credential (New-Object System.Management.Automation.PSCredential (${{ secrets.CLIENTID }}, (ConvertTo-SecureString ${{ secrets.CLIENTSECRET }} -AsPlainText -Force)))
           # Set the context to the appropriate subscription
          
           Install-Module -Name "Az.Synapse" -Confirm:$false  -Scope CurrentUser  -Force
