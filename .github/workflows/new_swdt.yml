@@ -21,26 +21,21 @@ jobs:
       uses: azure/powershell@v1
       with:
         inlineScript: |
-          Install-Module -Name Az.Synapse -Force -AllowClobber -Scope CurrentUser
+          echo "synapseWorkspaceName = wspcunha"
+          Install-Module -Name "Az.Synapse" -Confirm:$false  -Scope CurrentUser  -Force;
+          # Get token for data plane
+          $token = Get-AzAccessToken -ResourceUrl https://dev.azuresynapse.net
           
-          Import-Module -Name Az.Synapse -Force
-
-          Select-AzSubscription -SubscriptionId ${{ secrets.SUBSCRIPTIONID }}
-          
-          $triggerlist= Get-AzSynapseTrigger -WorkspaceName "wspcunha" | select Name
-          
-          # Loop through each trigger and start it
-          foreach ($trigger in $triggerlist ) {
-              $name = $trigger.Name 
-              echo "Starting trigger $name"
-              try {
-                  Start-AzSynapseTrigger -WorkspaceName "wspcunha" -Name $name -PassThru
-              }
-              catch {
-                  echo "Trigger $name started"
-              }
+          $authHeader = @{
+                  'Content-Type'  = 'application/octet-stream'
+                  'Authorization' = 'Bearer ' + $token.Token
           }
-        azPSVersion: '3.1.0'
+              
+          $triggersSynapse = Get-AzSynapseTrigger -WorkspaceName "wspcunha";
+        
+          $triggersSynapse | ForEach-Object { Invoke-WebRequest -Method POST -Uri "https://wspcunha.dev.azuresynapse.net/triggers/$($_.name)/stop?api-version=2020-12-01" -Headers $authHeader}
+        
+        azPSVersion: latest
 
       
       #- name: Synapse workspace deployment
