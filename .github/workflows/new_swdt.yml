@@ -24,6 +24,8 @@ jobs:
           Install-Module -Name Az.Synapse -Force -AllowClobber -Scope CurrentUser
           
           Import-Module -Name Az.Synapse -Force
+
+          Select-AzSubscription -SubscriptionId ${{ secrets.SUBSCRIPTIONID }}
           
           $triggerlist= Get-AzSynapseTrigger -WorkspaceName "wspcunha" | select Name
           
