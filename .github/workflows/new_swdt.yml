@@ -17,19 +17,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+
     - name: Azure Login
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.CLIENTSECRET }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - name: Azure PowerShell script
       uses: azure/powershell@v1
       with:
-        inlineScript: |
-          $context = Connect-AzAccount -Credential (Get-Credential)
-
-          # Set the context to the appropriate subscription
-          Set-AzContext -SubscriptionId ${{ secrets.SUBSCRIPTIONID }} -Context $context
+        inlineScript: |         
     
           echo "synapseWorkspaceName = wspcunha"
           
