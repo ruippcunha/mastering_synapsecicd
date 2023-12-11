@@ -30,11 +30,8 @@ jobs:
 
           $context = Connect-AzAccount -ServicePrincipal -Tenant "72f988bf-86f1-41af-91ab-2d7cd011db47" -Credential (New-Object System.Management.Automation.PSCredential ("70c858c1-755c-4d35-bb41-77a76a399244", (ConvertTo-SecureString "SVm8Q~GiwxZME3A6C5.-wLzh.2QprnfoxUuOjdhF" -AsPlainText -Force)))
           # Set the context to the appropriate subscription
-          #Set-AzContext -Context $context
-    
-          echo "synapseWorkspaceName = wspcunha"
-          
-          Install-Module -Name "Az.Synapse" -Confirm:$false  -Scope CurrentUser  -Force;
+         
+          Install-Module -Name "Az.Synapse" -Confirm:$false  -Scope CurrentUser  -Force
           # Get token for data plane
           $token = Get-AzAccessToken -ResourceUrl https://dev.azuresynapse.net
           
@@ -43,8 +40,8 @@ jobs:
                   'Authorization' = 'Bearer ' + $token.Token
           }
               
-          $triggersSynapse = Get-AzSynapseTrigger -WorkspaceName "wspcunha";
-        
+          $triggersSynapse = Get-AzSynapseTrigger -WorkspaceName "wspcunha"
+          
           $triggersSynapse | ForEach-Object { 
 
             try {
