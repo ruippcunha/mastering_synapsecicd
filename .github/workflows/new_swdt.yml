@@ -27,6 +27,11 @@ jobs:
       uses: azure/powershell@v1
       with:
         inlineScript: |         
+
+          $context = Connect-AzAccount -Credential (Get-Credential)
+
+          # Set the context to the appropriate subscription
+          Set-AzContext -SubscriptionId ${{ secrets.SUBSCRIPTIONID }} -Context $context
     
           echo "synapseWorkspaceName = wspcunha"
           
