@@ -45,7 +45,20 @@ jobs:
               
           $triggersSynapse = Get-AzSynapseTrigger -WorkspaceName "wspcunha";
         
-          $triggersSynapse | ForEach-Object { Invoke-WebRequest -Method POST -Uri "https://wspcunha.dev.azuresynapse.net/triggers/$($_.name)/stop?api-version=2020-12-01" -Headers $authHeader}
+          $triggersSynapse | ForEach-Object { 
+
+            try {
+
+              echo "stopping trigger $($_.name)"
+              
+              Invoke-WebRequest -Method POST -Uri "https://wspcunha.dev.azuresynapse.net/triggers/$($_.name)/stop?api-version=2020-12-01" -Headers $authHeader
+            }
+            catch{
+
+             echo "failed to stop trigger $($_.name)"
+            }
+          
+          }
         
         azPSVersion: latest
 
