@@ -17,11 +17,22 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.CLIENTSECRET }}
+    
     - name: Azure PowerShell script
       uses: azure/powershell@v1
       with:
         inlineScript: |
+          $context = Connect-AzAccount -Credential (Get-Credential)
+
+          # Set the context to the appropriate subscription
+          Set-AzContext -SubscriptionId ${{ secrets.SUBSCRIPTIONID }} -Context $context
+    
           echo "synapseWorkspaceName = wspcunha"
+          
           Install-Module -Name "Az.Synapse" -Confirm:$false  -Scope CurrentUser  -Force;
           # Get token for data plane
           $token = Get-AzAccessToken -ResourceUrl https://dev.azuresynapse.net
