@@ -28,7 +28,7 @@ jobs:
       with:
         inlineScript: |         
 
-          $context = Connect-AzAccount -Credential ${{ secrets.AZURE_CREDENTIALS }}  -Force
+          $context = Connect-AzAccount -Force
 
           # Set the context to the appropriate subscription
           Set-AzContext -SubscriptionId ${{ secrets.SUBSCRIPTIONID }} -Context $context
