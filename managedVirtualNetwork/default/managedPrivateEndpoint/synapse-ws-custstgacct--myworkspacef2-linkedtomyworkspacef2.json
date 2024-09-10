@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-custstgacct--myworkspacef2-linkedtomyworkspacef2",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/39434f1f-35e4-4501-b6ec-af88631a3b7a/resourceGroups/flavor2/providers/Microsoft.Storage/storageAccounts/linkedtomyworkspacef2",
+		"groupId": "dfs",
+		"fqdns": [
+			"linkedtomyworkspacef2.dfs.core.windows.net"
+		]
+	}
+}
